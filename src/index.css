@@ -1,69 +1,164 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+*{
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Bubblegum Sans', cursive;
+}
+
+.key{
+  background-color: white;
+  height: 300px;
+  width: 60px;
+  border: 2px solid black;
+}
+
+.piano{
+  height: 100vh;
+
+}
+
+.piano-title{
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 1.7rem;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.piano-keys{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0px auto auto;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.piano::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./assets/main-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7; /* adjust the opacity as needed */
+  z-index: -1;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.key-text{
+  position: relative;
+  font-size: 1.8rem;
+  margin-top: 250px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.black-key{
+  background-color: black;
+  position: relative;
+  height: 200px;
+  margin-left: -17px;
+  margin-right: -17px;
+  width: 30px;
+  margin-top: -100px;
+  color: white;
+}
+
+.black-key-text{
+  position: absolute;
+  bottom: 10%;
+
+}
+
+.highlighted-key{
+  background-color: rgb(168, 237, 241);
+}
+
+.piano-settings{
+  display: flex;
+  justify-content: center;
+
+}
+
+.piano-settings button{
+  font-size: 1.5rem;
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+
+.settings-page{
+  position: absolute;
+  display: flex;
+  margin: auto;
+  top: 2%;
+  left: 2%;
+  flex-direction: column;
+  align-items: center;
+  height: 450px;
+  width: 500px;
+  border: 1px solid rgb(214, 204, 204);
+  background: rgb(238, 209, 83);
+  /* box-shadow: 10px 10px 8px 10px #888888; */
+  box-shadow: 0 0 20px 5px #494545;
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.settings-page-title{
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.settings-page-title img{
+  position: absolute;
+  right: 15%
+}
+
+.settings-page-content{
+  margin-top: 20px;
+  display: flex;
+}
+
+.settings-notes-text{
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+
+.button-input{
+  margin-left: 10px;
+  width: 40px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.music-volume{
+  text-align: center;
+}
+
+.volume-control{
+  display: flex;
+  position: relative;
+  top: -10%;
+  lefT: 20%
+}
+
+.music-volume input{
+  height: 5px;
+  width: 70px;
+  border-radius: 10px;
+}
+
+.music-icons img{
+  height: 20px;
+  position: relative;
+  top: 45%;
+  left: -30%;
 }
